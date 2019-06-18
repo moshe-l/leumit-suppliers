@@ -1,0 +1,25 @@
+.navbar-nav{
+    flex-direction: row;
+      margin-top: 5px;
+      padding: 0px;
+}
+.navbar-nav li{
+    margin: 2px;
+  border: 1px solid black;
+  transition: color 0.5s;
+}
+.navbar-nav  li.active{
+  border: 1px solid silver;
+  background-color: cadetblue;
+}
+.navbar-nav  li.disabled{
+   opacity: 0.5;
+   pointer-events:none;
+}
+form.disabled input[type="text"]
+{
+  pointer-events:none;
+}
+form{
+  margin-bottom: 10px;
+}

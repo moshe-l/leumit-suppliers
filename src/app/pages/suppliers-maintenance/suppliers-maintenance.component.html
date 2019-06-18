@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li [ngClass]="{'active' : state == maintenanceState.add}"><a href="javascript:void(0)" (click)="state = maintenanceState.add; setForm();">הוספה</a></li>
+      <li [ngClass]="{'disabled': !selectedSupplier , 'active' : state == maintenanceState.edit}"><a href="javascript:void(0)" (click)="state = maintenanceState.edit; setForm();">עריכה</a></li>
+      <li [ngClass]="{'disabled': !selectedSupplier  , 'active' : state == maintenanceState.view}"><a href="javascript:void(0)" (click)="state = maintenanceState.view; setForm();">תצוגה</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<hr>
+<form [formGroup]="maitenanceForm"  [ngClass]="{'disabled' : state == maintenanceState.view}">
+  <div>
+    <label> מספר ספק: &nbsp; </label> <span>{{maitenanceForm.controls['id'].value}}</span>
+  </div>
+  <div class="form-group">
+    <label>שם ספק</label>
+    <input type="text" formControlName="name" class="form-control" placeholder="הכנס שם ספק">
+
+  </div>
+  <div class="form-group">
+    <label>כתובת</label>
+    <input type="text" formControlName="address" class="form-control" placeholder="הכנס כתובת">
+  </div>
+  <div class="form-group">
+    <label >טלפון</label>
+    <input type="text" formControlName="phoneNumber" class="form-control" placeholder="הכנס טלפון">
+  </div>
+  <div class="form-group">
+    <label >אימייל</label>
+    <input type="text" formControlName="emailAddress" class="form-control" placeholder="הכנס אימייל">
+  </div>
+  <div class="form-group">
+    <label >סוג שירות</label>
+    <input type="text" formControlName="services" class="form-control" placeholder="הכנס סוג שירות">
+  </div>
+  <div *ngIf="state != maintenanceState.view" class="text-center">
+    <button (click)="addOrUpdate()" type="submit" class="btn btn-primary">{{ state == maintenanceState.add ? 'הוספה' : 'עריכה'  }}</button>
+  </div>
+
+</form>

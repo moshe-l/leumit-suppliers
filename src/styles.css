@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    direction: rtl;
+    font-size: 20px;
+    text-align: right;
+}
+label{
+     font-size: 20px;
+}
+header{
+    border-bottom: 3px solid silver;
+}
+h1{
+    text-align: center;
+}
+.sidenav{
+ border-left: 3px solid silver;
+ border-bottom: 3px solid silver;
+}
+input[type="text"] , button[type="submit"], .btn-primary{
+    font-size: 17px;
+}
+ .form-inline *{
+    margin: 5px;
+} 
+.card-body{
+    font-size: 17px;
+    text-align: center;
+}
+
+.card-body {
+
+    padding: 1rem;
+}
+.align-center{
+    text-align: center
+}
+
+
+
